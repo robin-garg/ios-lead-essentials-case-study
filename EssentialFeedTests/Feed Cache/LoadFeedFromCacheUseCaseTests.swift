@@ -28,41 +28,17 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
         let retrievalError = anyNSError()
         
-        let exp = expectation(description: "Wait for load to finish")
-        var receivedError: Error?
-        sut.load { result in
-            switch result {
-            case let .failure(error):
-                receivedError = error
-            default:
-                XCTFail("Expected Error got \(result) instead")
-            }
-            exp.fulfill()
-        }
-        store.completeRetrieval(with: retrievalError)
-        wait(for: [exp], timeout: 1.0)
-
-        XCTAssertEqual(receivedError as NSError?, retrievalError)
+        expect(sut, toCompleteWith: .failure(retrievalError), when: {
+            store.completeRetrieval(with: retrievalError)
+        })
     }
     
     func test_load_deliversNoImagesOnEmptyCache() {
         let (sut, store) = makeSUT()
-
-        let exp = expectation(description: "Wait for load to finish")
-        var receivedImages: [FeedImage]?
-        sut.load { result in
-            switch result {
-            case let .success(images):
-                receivedImages = images
-            default:
-                XCTFail("Expected success, but got \(result) instead")
-            }
-            exp.fulfill()
-        }
-        store.completeRetrievalWithNoCachedImages()
-        wait(for: [exp], timeout: 1.0)
-
-        XCTAssertEqual(receivedImages, [])
+        
+        expect(sut, toCompleteWith: .success([]), when: {
+            store.completeRetrievalWithNoCachedImages()
+        })
     }
     
     // MARK: - Helpers
@@ -75,6 +51,26 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         
         return (sut, store)
     }
+    
+    private func expect(_ sut: LocalFeedLoader, toCompleteWith expectedResult: LocalFeedLoader.LoadResult, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for load to finish")
+        
+        sut.load { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedImages), .success(expectedImages)):
+                XCTAssertEqual(receivedImages, expectedImages, file: file, line: line)
+            case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+            default:
+                XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+
+        action()
+        wait(for: [exp], timeout: 1.0)
+    }
+
     
     private func anyNSError() -> NSError {
         return NSError(domain: "any error", code: 1)
