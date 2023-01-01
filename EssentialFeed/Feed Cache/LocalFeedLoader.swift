@@ -37,8 +37,8 @@ public final class LocalFeedLoader {
         }
     }
     
-    public func load() {
-        store.loadCachedFeed()
+    public func load(completion: @escaping (Error?) -> Void) {
+        store.loadCachedFeed(completion: completion)
     }
 }
 
