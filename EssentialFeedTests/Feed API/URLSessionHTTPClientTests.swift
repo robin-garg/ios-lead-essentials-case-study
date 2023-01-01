@@ -22,7 +22,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     // We can use same observeRequest behaviour for checking other methods
     // like POST or request body or query parameters of requests etc
     func test_getFromURL_performGETRequestFromURL() {
-        let url = someURL()
+        let url = anyURL()
         let exp = expectation(description: "Wait for request")
         URLProtocolStub.observeRequest { request in
             XCTAssertEqual(request.url, url)
@@ -114,7 +114,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         let exp = expectation(description: "Wait for completion")
         
         var receivedResult: HTTPClientResult!
-        sut.get(from: someURL()) { result in
+        sut.get(from: anyURL()) { result in
             receivedResult = result
             exp.fulfill()
         }
@@ -122,25 +122,17 @@ class URLSessionHTTPClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         return receivedResult
     }
-
-    private func someURL() -> URL {
-        return URL(string: "https://some-url.com")!
-    }
     
     private func anyData() -> Data {
         return Data("any data".utf8)
     }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 1)
-    }
-    
+        
     private func nonHTTPURLResponse() -> URLResponse {
-        return URLResponse(url: someURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
-        return HTTPURLResponse(url: someURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+        return HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
     }
     
     private class URLProtocolStub: URLProtocol {
