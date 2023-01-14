@@ -29,9 +29,27 @@ final class CodeableFeedStoreTests: XCTestCase {
             
             exp.fulfill()
         }
-        
         wait(for: [exp], timeout: 1.0)
-        
     }
     
+    func test_load_hasNoSideEffectOnEmptyCache() {
+        let sut = CodableFeedStore()
+        
+        let exp = expectation(description: "wait for cache retrieval")
+        sut.loadCachedFeed { firstResult in
+            sut.loadCachedFeed { secondResult in
+                switch (firstResult, secondResult) {
+                case (.empty, .empty):
+                    break
+                default:
+                    XCTFail("Expected load twice from empty cache to deliver same empty result, got \(firstResult) and \(secondResult) instead")
+                }
+
+                exp.fulfill()
+            }
+            
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+
 }
