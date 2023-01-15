@@ -89,7 +89,7 @@ final class CodeableFeedStoreTests: XCTestCase {
         
     func test_load_hasNoSideEffectOnEmptyCache() {
         let sut = makeSUT()
-        makeSUT
+
         let exp = expectation(description: "wait for cache retrieval")
         sut.loadCachedFeed { firstResult in
             sut.loadCachedFeed { secondResult in
@@ -133,7 +133,9 @@ final class CodeableFeedStoreTests: XCTestCase {
     }
 
     // MARK: - Helpers
-    private func makeSUT() -> CodableFeedStore {
-        return CodableFeedStore()
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
+        let sut = CodableFeedStore()
+        trackForMemoryLeak(sut, file: file, line: line)
+        return sut
     }
 }
