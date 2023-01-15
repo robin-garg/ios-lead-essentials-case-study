@@ -81,22 +81,8 @@ final class CodeableFeedStoreTests: XCTestCase {
         
     func test_load_hasNoSideEffectOnEmptyCache() {
         let sut = makeSUT()
-
-        let exp = expectation(description: "wait for cache retrieval")
-        sut.loadCachedFeed { firstResult in
-            sut.loadCachedFeed { secondResult in
-                switch (firstResult, secondResult) {
-                case (.empty, .empty):
-                    break
-                default:
-                    XCTFail("Expected load twice from empty cache to deliver same empty result, got \(firstResult) and \(secondResult) instead")
-                }
-
-                exp.fulfill()
-            }
-            
-        }
-        wait(for: [exp], timeout: 1.0)
+        
+        expect(sut: sut, toLoadTwice: .empty)
     }
 
     func test_loadAfterInsertingToEmptyCache_deliversInsertedValues() {
@@ -116,33 +102,17 @@ final class CodeableFeedStoreTests: XCTestCase {
 
     func test_load_hasNoSideEffectsOnNonEmptyCache() {
         let sut = makeSUT()
-        
         let feed = uniqueImageFeed().local
         let timestamp = Date()
         
         let exp = expectation(description: "wait for cache retrieval")
         sut.insert(feed, timestamp: timestamp) { insertionError in
             XCTAssertNil(insertionError, "Expected feed to be inserted successfully")
-            
-            sut.loadCachedFeed { firstResult in
-                sut.loadCachedFeed { secondResult in
-                    switch (firstResult, secondResult) {
-                    case let (.found(firstFound), .found(secondFound)):
-                        XCTAssertEqual(feed, firstFound.feed)
-                        XCTAssertEqual(timestamp, firstFound.timestamp)
-                        
-                        XCTAssertEqual(feed, secondFound.feed)
-                        XCTAssertEqual(timestamp, secondFound.timestamp)
-
-                        break
-                    default:
-                        XCTFail("Expected load twice from Non empty cache should return same result with feed \(feed) and timestamp \(timestamp), got \(firstResult) and \(secondResult), instead")
-                    }
-                    exp.fulfill()
-                }
-            }
+            exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)
+        
+        expect(sut: sut, toLoadTwice: .found(feed: feed, timestamp: timestamp))
     }
 
     // MARK: - Helpers
@@ -150,6 +120,11 @@ final class CodeableFeedStoreTests: XCTestCase {
         let sut = CodableFeedStore(storeURL: testSpecificStoreURL())
         trackForMemoryLeak(sut, file: file, line: line)
         return sut
+    }
+    
+    private func expect(sut: CodableFeedStore, toLoadTwice expectedResult: RetrieveCachedFeedResult, file: StaticString = #file, line: UInt = #line) {
+        expect(sut: sut, toLoad: expectedResult, file: file, line: line)
+        expect(sut: sut, toLoad: expectedResult, file: file, line: line)
     }
     
     private func expect(sut: CodableFeedStore, toLoad expectedResult: RetrieveCachedFeedResult, file: StaticString = #file, line: UInt = #line) {
