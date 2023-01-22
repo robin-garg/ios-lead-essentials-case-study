@@ -51,7 +51,7 @@ final class CodeableFeedStoreTests: XCTestCase, FailableFeedStore {
         
         try! "Invalid Data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        expect(sut: sut, toLoadTwice: .failure(anyNSError()))
+        assertLoadDeliversFailureOnLoadError(on: sut)
     }
 
     func test_load_hasNoSideEffectsOnFailure() {
@@ -60,7 +60,7 @@ final class CodeableFeedStoreTests: XCTestCase, FailableFeedStore {
         
         try! "Invalid Data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        expect(sut: sut, toLoad: .failure(anyNSError()))
+        assertThatLoadHasNoSideEffectsOnFailure(on: sut)
     }
     
     func test_insert_deliversNoErrorOnEmptyCache() {
