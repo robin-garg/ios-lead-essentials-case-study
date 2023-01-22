@@ -17,5 +17,3 @@ extension FailableLoadFeedStoreSpecs where Self: XCTestCase {
         expect(sut: sut, toLoad: .failure(anyNSError()), file: file, line: line)
     }
 }
-
-
