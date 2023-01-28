@@ -24,13 +24,13 @@ private class CoreDataFeedStore: FeedStore {
 
 final class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     func test_load_deliversEmptyOnEmptyCache() {
-        let sut = CoreDataFeedStore()
+        let sut = makeSUT()
         
         assertThatLoadDeliversEmptyOnEmptyCache(on: sut)
     }
     
     func test_load_hasNoSideEffectOnEmptyCache() {
-        let sut = CoreDataFeedStore()
+        let sut = makeSUT()
 
         assertThatLoadHasNoSideEffectOnEmptyCache(on: sut)
     }
@@ -73,5 +73,12 @@ final class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     
     func test_storeSideEffects_runSerially() {
         
+    }
+    
+    // MARK:- Helpers
+    private func makeSUT() -> CoreDataFeedStore {
+        let sut = CoreDataFeedStore()
+
+        return sut
     }
 }
