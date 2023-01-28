@@ -28,7 +28,7 @@ final class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_load_hasNoSideEffectsOnNonEmptyCache() {
-        
+
     }
     
     func test_insert_deliversNoErrorOnEmptyCache() {
