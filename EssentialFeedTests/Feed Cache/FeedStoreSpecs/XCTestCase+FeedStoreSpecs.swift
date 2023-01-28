@@ -14,7 +14,7 @@ extension FeedStoreSpecs where Self: XCTestCase {
     }
 
     func assertThatLoadHasNoSideEffectOnEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
-        expect(sut: sut, toLoad: .empty, file: file, line: line)
+        expect(sut: sut, toLoadTwice: .empty, file: file, line: line)
     }
     
     func assertThatLoadDeliversFoundValuesOnNonEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
