@@ -110,7 +110,7 @@ final class CodeableFeedStoreTests: XCTestCase, FailableFeedStore {
     func test_delete_deliversNoErrorOnNonEmptyCache() {
         let sut = makeSUT()
 
-        assertThatDeleteHasNoSideEffectsOnNonEmptyCache(on: sut)
+        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
     func test_delete_emptiesPreviouslyInsertedCache() {
