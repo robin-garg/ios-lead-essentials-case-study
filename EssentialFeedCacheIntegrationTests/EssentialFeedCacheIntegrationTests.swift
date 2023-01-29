@@ -96,7 +96,6 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 
-    
     private func testSpecificStoreURL() -> URL {
         return cachesDirectory().appendingPathComponent("\(type(of: self)).store")
     }
