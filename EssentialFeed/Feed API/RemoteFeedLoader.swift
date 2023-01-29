@@ -28,7 +28,7 @@ public final class RemoteFeedLoader: FeedLoader {
             guard self != nil else { return }
             // Later we can parse error type and pass error accordingly
             switch result {
-            case let .success(data, response):
+            case let .success((data, response)):
                 completion(RemoteFeedLoader.map(data, from: response))
             case .failure:
                 completion(.failure(Error.connectivity))
