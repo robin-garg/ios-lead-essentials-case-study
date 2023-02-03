@@ -36,7 +36,7 @@ extension FeedImageCell {
         locationLabel.text = modal.location
         locationConatiner.isHidden = modal.location == nil
         
-        feedImageView.image = UIImage(named: modal.imageName)
+        fadeIn(UIImage(named: modal.imageName))
         
         descriptionLabel.text = modal.description
         descriptionLabel.isHidden = modal.description == nil
