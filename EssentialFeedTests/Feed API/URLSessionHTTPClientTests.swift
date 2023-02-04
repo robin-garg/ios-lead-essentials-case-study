@@ -22,7 +22,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     // We can use same observeRequest behaviour for checking other methods
     // like POST or request body or query parameters of requests etc
     func test_getFromURL_performGETRequestFromURL() {
-        let url = someURL()
+        let url = anyURL()
         let exp = expectation(description: "Wait for request")
         URLProtocolStub.observeRequest { request in
             XCTAssertEqual(request.url, url)
@@ -99,7 +99,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     private func resultValueFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
         let receivedResult = resultFor(data: data, response: response, error: error, file: file, line: line)
         switch receivedResult {
-            case let .success(data, response):
+            case let .success((data, response)):
                 return (data, response)
             default:
                 XCTFail("Expected success got \(receivedResult) instead", file: file, line: line)
@@ -107,14 +107,14 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
     }
 
-    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClientResult {
+    private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
         URLProtocolStub.stub(data: data, response: response, error: error)
                 
         let sut = makeSUT(file: file, line: line)
         let exp = expectation(description: "Wait for completion")
         
-        var receivedResult: HTTPClientResult!
-        sut.get(from: someURL()) { result in
+        var receivedResult: HTTPClient.Result!
+        sut.get(from: anyURL()) { result in
             receivedResult = result
             exp.fulfill()
         }
@@ -122,25 +122,17 @@ class URLSessionHTTPClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         return receivedResult
     }
-
-    private func someURL() -> URL {
-        return URL(string: "https://some-url.com")!
-    }
     
     private func anyData() -> Data {
         return Data("any data".utf8)
     }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 1)
-    }
-    
+        
     private func nonHTTPURLResponse() -> URLResponse {
-        return URLResponse(url: someURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
-        return HTTPURLResponse(url: someURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+        return HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
     }
     
     private class URLProtocolStub: URLProtocol {
