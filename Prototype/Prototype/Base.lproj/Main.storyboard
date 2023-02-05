@@ -108,6 +108,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="4pY-nw-ts9" id="Jfd-Ha-qWd"/>
+                                    <outlet property="feedImageContainer" destination="iCC-rs-QBw" id="RIg-bu-62G"/>
                                     <outlet property="feedImageView" destination="Nm0-RU-KNf" id="Ozc-zz-Ile"/>
                                     <outlet property="locationConatiner" destination="sg2-XL-Qtc" id="3rI-yW-cZo"/>
                                     <outlet property="locationLabel" destination="Q0g-Jk-Nti" id="c8F-pS-H63"/>
