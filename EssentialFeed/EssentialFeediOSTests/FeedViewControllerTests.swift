@@ -128,28 +128,28 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
 // Commenting for now as its not working correctly.
-//    func test_feedImageView_rendersImageLoadedFromURL() {
-//        let (sut, loader) = makeSUT()
-//
-//        sut.loadViewIfNeeded()
-//        loader.completeFeedLoading(with: [makeImage(), makeImage()])
-//
-//        let view0 = sut.simulateFeedImageViewVisible(at: 0)
-//        let view1 = sut.simulateFeedImageViewVisible(at: 1)
-//
-//        XCTAssertEqual(view0?.renderedImage, .none, "Expected no image for first view while loading first image")
-//        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image for second view while loading second image")
-//
-//        let imageData0 = UIImage.make(withColor: UIColor.red).pngData()!
-//        loader.completeImageLoading(with: imageData0, at: 0)
-//        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected image for first view once loading first image completes successfully")
-//        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image state changed for second view once first image loading completes successfully")
-//
-//        let imageData1 =  UIImage.make(withColor: UIColor.blue).pngData()!
-//        loader.completeImageLoading(with: imageData1, at: 1)
-//        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected no state changed for first view once second image loading completes successfully")
-//        XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once loading second image completes successfully")
-//    }
+    func test_feedImageView_rendersImageLoadedFromURL() {
+        let (sut, loader) = makeSUT()
+
+        sut.loadViewIfNeeded()
+        loader.completeFeedLoading(with: [makeImage(), makeImage()])
+
+        let view0 = sut.simulateFeedImageViewVisible(at: 0)
+        let view1 = sut.simulateFeedImageViewVisible(at: 1)
+
+        XCTAssertEqual(view0?.renderedImage, .none, "Expected no image for first view while loading first image")
+        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image for second view while loading second image")
+
+        let imageData0 = UIImage.make(withColor: UIColor.red).pngData()!
+        loader.completeImageLoading(with: imageData0, at: 0)
+        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected image for first view once loading first image completes successfully")
+        XCTAssertEqual(view1?.renderedImage, .none, "Expected no image state changed for second view once first image loading completes successfully")
+
+        let imageData1 =  UIImage.make(withColor: UIColor.blue).pngData()!
+        loader.completeImageLoading(with: imageData1, at: 1)
+        XCTAssertEqual(view0?.renderedImage, imageData0, "Expected no state changed for first view once second image loading completes successfully")
+        XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once loading second image completes successfully")
+    }
 
     func test_feedImageViewRetryButton_isVisibleOnImageURLLoadError() {
         let (sut, loader) = makeSUT()
@@ -357,12 +357,13 @@ private extension UIRefreshControl {
 private extension UIImage {
     static func make(withColor color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(color.cgColor)
-        context?.fill(rect)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return img!
+        
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+
+        return UIGraphicsImageRenderer(size: rect.size, format: format).image { rendererContext in
+            color.setFill()
+            rendererContext.fill(rect)
+        }
     }
 }
