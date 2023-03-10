@@ -9,7 +9,8 @@ import UIKit
 import EssentialFeed
 
 public final class FeedViewController: UITableViewController {
-    var loader: FeedLoader?
+    private var loader: FeedLoader?
+    private var tableModal = [FeedImage]()
     
     public convenience init(loader: FeedLoader) {
         self.init()
@@ -27,8 +28,23 @@ public final class FeedViewController: UITableViewController {
     
     @objc private func load() {
         refreshControl?.beginRefreshing()
-        loader?.load { [weak self] _ in
+        loader?.load { [weak self] result in
+            self?.tableModal = (try? result.get()) ?? []
+            self?.tableView.reloadData()
             self?.refreshControl?.endRefreshing()
         }
+    }
+    
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableModal.count
+    }
+    
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModal = tableModal[indexPath.row]
+        let cell = FeedImageCell()
+        cell.locationContainer.isHidden = (cellModal.location == nil)
+        cell.locationLabel.text = cellModal.location
+        cell.descriptionLabel.text = cellModal.description
+        return cell
     }
 }
