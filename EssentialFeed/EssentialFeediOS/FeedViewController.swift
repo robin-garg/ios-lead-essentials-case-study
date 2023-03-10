@@ -10,6 +10,7 @@ import EssentialFeed
 
 public protocol FeedImageDataLoader {
     func loadImageData(from url: URL)
+    func cancelImageDataLoad(from url: URL)
 }
 
 public final class FeedViewController: UITableViewController {
@@ -55,5 +56,10 @@ public final class FeedViewController: UITableViewController {
         cell.descriptionLabel.text = cellModal.description
         imageLoader?.loadImageData(from: cellModal.url)
         return cell
+    }
+    
+    public override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cellModal = tableModal[indexPath.row]
+        imageLoader?.cancelImageDataLoad(from: cellModal.url)
     }
 }
