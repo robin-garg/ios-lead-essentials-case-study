@@ -8,9 +8,9 @@
 import UIKit
 
 final class FeedImageCellController {
-    private var viewModal: FeedImageViewModel
+    private var viewModal: FeedImageViewModel<UIImage>
     
-    init(viewModal: FeedImageViewModel) {
+    init(viewModal: FeedImageViewModel<UIImage>) {
         self.viewModal = viewModal
     }
     

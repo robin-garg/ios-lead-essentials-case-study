@@ -5,17 +5,21 @@
 //  Created by Apple on 12/03/23.
 //
 
-import UIKit
+import Foundation
 import EssentialFeed
 
-final class FeedImageViewModel {
+final class FeedImageViewModel<Image> {
+    typealias Observer<T> = (T) -> Void
+    
     private var task: FeedImageDataLoaderTask?
     private let model: FeedImage
     private let imageLoader: FeedImageDataLoader
+    private let imageTransformer: (Data) -> Image?
     
-    init(model: FeedImage, imageLoader: FeedImageDataLoader) {
+    init(model: FeedImage, imageLoader: FeedImageDataLoader, imageTransformer: @escaping (Data) -> Image?) {
         self.model = model
         self.imageLoader = imageLoader
+        self.imageTransformer = imageTransformer
     }
     
     var location: String? {
@@ -30,21 +34,25 @@ final class FeedImageViewModel {
         return location != nil
     }
     
-    var onImageLoadingStateChange: ((Bool) -> Void)?
-    var onLoadFeedImage: ((UIImage?) -> Void)?
-    var onShouldRetryImageLoadStateChange: ((Bool) -> Void)?
+    var onImageLoadingStateChange: Observer<Bool>?
+    var onLoadFeedImage: Observer<Image>?
+    var onShouldRetryImageLoadStateChange: Observer<Bool>?
     
     func loadImageData() {
         onImageLoadingStateChange?(true)
         onShouldRetryImageLoadStateChange?(false)
         self.task = self.imageLoader.loadImageData(from: self.model.url) { [weak self] result in
-            if let image = (try? result.get()).flatMap(UIImage.init) {
-                self?.onLoadFeedImage?(image)
-            } else {
-                self?.onShouldRetryImageLoadStateChange?(true)
-            }
-            self?.onImageLoadingStateChange?(false)
+            self?.handle(result)
         }
+    }
+    
+    func handle(_ result: FeedImageDataLoader.Result) {
+        if let image = (try? result.get()).flatMap(imageTransformer) {
+            self.onLoadFeedImage?(image)
+        } else {
+            self.onShouldRetryImageLoadStateChange?(true)
+        }
+        self.onImageLoadingStateChange?(false)
     }
     
     func cancelImageDataLoad() {
