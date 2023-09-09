@@ -7,45 +7,39 @@
 
 import UIKit
 
-final class FeedImageCellController {
-    private var viewModal: FeedImageViewModel<UIImage>
+protocol FeedImageCellControllerDelegate {
+    func didRequestImage()
+    func didCancelImageRequest()
+}
+
+final class FeedImageCellController: FeedImageView {
+    private let delegate: FeedImageCellControllerDelegate
+    private lazy var cell = FeedImageCell()
     
-    init(viewModal: FeedImageViewModel<UIImage>) {
-        self.viewModal = viewModal
+    init(delegate: FeedImageCellControllerDelegate) {
+        self.delegate = delegate
     }
     
     func view() -> UITableViewCell {
-        let cell = binded(FeedImageCell())
-        viewModal.loadImageData()
+        delegate.didRequestImage()
         return cell
     }
     
-    private func binded(_ cell: FeedImageCell) -> FeedImageCell {
-        cell.locationContainer.isHidden = !viewModal.hasLocation
-        cell.locationLabel.text = viewModal.location
-        cell.descriptionLabel.text = viewModal.description
-        cell.onRetry = viewModal.loadImageData
-        
-        viewModal.onShouldRetryImageLoadStateChange = { [weak cell] shouldRetry in
-            cell?.feedImageRetryButton.isHidden = !shouldRetry
-        }
-
-        viewModal.onImageLoadingStateChange = { [weak cell] isLoading in
-            cell?.feedImageContainer.isShimmering = isLoading
-        }
-        
-        viewModal.onLoadFeedImage = { [weak cell] image in
-            cell?.feedImageView.image = image
-        }
-
-        return cell
-    }
-    
-    func prefetch() {
-        viewModal.loadImageData()
+    func preload() {
+        delegate.didRequestImage()
     }
     
     func cancelLoad() {
-        viewModal.cancelImageDataLoad()
+        delegate.didCancelImageRequest()
+    }
+    
+    func display(_ viewModel: FeedImageViewModel<UIImage>) {
+        cell.locationContainer.isHidden = !viewModel.hasLocation
+        cell.locationLabel.text = viewModel.location
+        cell.descriptionLabel.text = viewModel.description
+        cell.feedImageView.image = viewModel.image
+        cell.feedImageContainer.isShimmering = viewModel.isLoading
+        cell.feedImageRetryButton.isHidden = !viewModel.shouldRetry
+        cell.onRetry = delegate.didRequestImage
     }
 }
