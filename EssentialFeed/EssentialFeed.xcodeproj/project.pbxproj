@@ -63,6 +63,8 @@
 		18CC90082856F095006E51EE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE085A2834CC57002E44C0 /* XCTestCase+MemoryLeakTracking.swift */; };
 		18CE085B2834CC57002E44C0 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE085A2834CC57002E44C0 /* XCTestCase+MemoryLeakTracking.swift */; };
 		18CE085D28351229002E44C0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE085C28351229002E44C0 /* URLSessionHTTPClient.swift */; };
+		18CED6022AD7717300D7FCAE /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CED6012AD7717300D7FCAE /* Feed.storyboard */; };
+		18CED6042AD7726500D7FCAE /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CED6032AD7726500D7FCAE /* Feed.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,8 @@
 		18CC90002856EF68006E51EE /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		18CE085A2834CC57002E44C0 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		18CE085C28351229002E44C0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		18CED6012AD7717300D7FCAE /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		18CED6032AD7726500D7FCAE /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				18BB80D629BB2CA300A8E490 /* FeedImageCell.swift */,
+				18CED6012AD7717300D7FCAE /* Feed.storyboard */,
+				18CED6032AD7726500D7FCAE /* Feed.xcassets */,
 				18BB80D829BB60E800A8E490 /* UIView+Shimmering.swift */,
 			);
 			path = Views;
@@ -714,6 +720,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CED6022AD7717300D7FCAE /* Feed.storyboard in Resources */,
+				18CED6042AD7726500D7FCAE /* Feed.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
