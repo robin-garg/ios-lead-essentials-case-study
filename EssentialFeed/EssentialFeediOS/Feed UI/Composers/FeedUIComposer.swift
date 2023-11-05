@@ -12,19 +12,62 @@ import EssentialFeed
      private init() {}
      
      public static func feedComposedWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
-         let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: feedLoader)
-         let refreshController = FeedRefreshViewController(delegate: presentationAdapter)
-         let feedController = FeedViewController(refreshController: refreshController)
+         let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: MainQueueDispatchDecorator(decoratee: feedLoader))
+         
+         let feedController = FeedViewController.makeWith(delegate: presentationAdapter, title: FeedPresenter.title)
          
          presentationAdapter.presenter =
-         
          FeedPresenter(
-             feedView: FeedViewAdapter(controller: feedController, imageLoader: imageLoader),
-             loadingView: WeakRefVirtualProxy(refreshController))
+             feedView: FeedViewAdapter(controller: feedController, imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
+             loadingView: WeakRefVirtualProxy(feedController))
          
          return feedController
      }
  }
+
+private final class MainQueueDispatchDecorator<T> {
+    let decoratee: T
+    
+    init(decoratee: T) {
+        self.decoratee = decoratee
+    }
+    
+    func dispatch(completion: @escaping () -> Void) {
+        guard Thread.isMainThread else {
+           return DispatchQueue.main.async { completion() }
+        }
+        
+        completion()
+    }
+}
+ 
+extension MainQueueDispatchDecorator: FeedLoader where T == FeedLoader {
+    func load(completion: @escaping (FeedLoader.Result) -> Void) {
+        decoratee.load { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}
+
+extension MainQueueDispatchDecorator: FeedImageDataLoader where T == FeedImageDataLoader {
+    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+        decoratee.loadImageData(from: url) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}
+
+
+private extension FeedViewController {
+    static func makeWith(delegate: FeedViewControllerDelegate, title: String) -> FeedViewController {
+        let bundle = Bundle(for: FeedViewController.self)
+        let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
+        let feedController = storyboard.instantiateInitialViewController() as! FeedViewController
+        feedController.delegate = delegate
+        feedController.title = title
+        return feedController
+    }
+}
 
  private final class WeakRefVirtualProxy<T: AnyObject> {
      private weak var object: T?
@@ -69,7 +112,7 @@ import EssentialFeed
      }
  }
 
- private final class FeedLoaderPresentationAdapter: FeedRefreshViewControllerDelegate {
+ private final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
      private let feedLoader: FeedLoader
      var presenter: FeedPresenter?
      
