@@ -77,6 +77,7 @@
 		18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */; };
 		18CED6232AF7D91800D7FCAE /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */; };
 		18CED6292AF7DA8600D7FCAE /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6282AF7DA8600D7FCAE /* UIRefreshControl+TestHelpers.swift */; };
+		18CED62B2AF7DAE400D7FCAE /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED62A2AF7DAE400D7FCAE /* UIButton+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalizationTests.swift; sourceTree = "<group>"; };
 		18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		18CED6282AF7DA8600D7FCAE /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
+		18CED62A2AF7DAE400D7FCAE /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */,
+				18CED62A2AF7DAE400D7FCAE /* UIButton+TestHelpers.swift */,
 				18CED6282AF7DA8600D7FCAE /* UIRefreshControl+TestHelpers.swift */,
 			);
 			path = Helpers;
@@ -878,6 +881,7 @@
 				18CED6292AF7DA8600D7FCAE /* UIRefreshControl+TestHelpers.swift in Sources */,
 				18AE1EC4298FD9F0009049C5 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */,
+				18CED62B2AF7DAE400D7FCAE /* UIButton+TestHelpers.swift in Sources */,
 				18CED6232AF7D91800D7FCAE /* UIImage+TestHelpers.swift in Sources */,
 				18BB80D529BB289600A8E490 /* SharedTestHelpers.swift in Sources */,
 			);
