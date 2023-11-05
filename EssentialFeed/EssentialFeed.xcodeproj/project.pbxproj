@@ -74,6 +74,7 @@
 		18CED61A2AF7487D00D7FCAE /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6192AF7487D00D7FCAE /* FeedViewAdapter.swift */; };
 		18CED61C2AF74EF400D7FCAE /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */; };
 		18CED61E2AF74F6500D7FCAE /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */; };
+		18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		18CED6192AF7487D00D7FCAE /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
+		18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +410,7 @@
 		18AE1EB2298E7500009049C5 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				18CED61F2AF74FFD00D7FCAE /* Feed Presentation */,
 				18BB80DF29BC972000A8E490 /* Feed UI */,
 				18BB80DE29BC972000A8E490 /* Helpers */,
 			);
@@ -533,6 +536,14 @@
 				186FE5522961F32F00F362B1 /* SharedTestHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		18CED61F2AF74FFD00D7FCAE /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */,
+			);
+			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -859,6 +870,7 @@
 			files = (
 				18AE1EBD298FC5A2009049C5 /* FeedViewControllerIntegrationTests.swift in Sources */,
 				18AE1EC4298FD9F0009049C5 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */,
 				18BB80D529BB289600A8E490 /* SharedTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
