@@ -75,6 +75,7 @@
 		18CED61C2AF74EF400D7FCAE /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */; };
 		18CED61E2AF74F6500D7FCAE /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */; };
 		18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */; };
+		18CED6232AF7D91800D7FCAE /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,7 @@
 		18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		18CED6202AF7501A00D7FCAE /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalizationTests.swift; sourceTree = "<group>"; };
+		18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 		18BB80E129BC972000A8E490 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				18CED6222AF7D91800D7FCAE /* UIImage+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				18AE1EBD298FC5A2009049C5 /* FeedViewControllerIntegrationTests.swift in Sources */,
 				18AE1EC4298FD9F0009049C5 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				18CED6212AF7501A00D7FCAE /* FeedLocalizationTests.swift in Sources */,
+				18CED6232AF7D91800D7FCAE /* UIImage+TestHelpers.swift in Sources */,
 				18BB80D529BB289600A8E490 /* SharedTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
