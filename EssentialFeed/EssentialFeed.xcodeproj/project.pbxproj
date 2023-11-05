@@ -70,6 +70,7 @@
 		18CED6102AF745A900D7FCAE /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */; };
 		18CED6122AF746B900D7FCAE /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */; };
 		18CED6162AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */; };
+		18CED6182AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6172AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 		18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		18CED6172AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +491,7 @@
 				18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */,
 				18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */,
 				18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */,
+				18CED6172AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				18BB80E329BC975C00A8E490 /* FeedImageDataLoader.swift in Sources */,
 				18BB80D929BB60E800A8E490 /* UIView+Shimmering.swift in Sources */,
 				18CED6102AF745A900D7FCAE /* MainQueueDispatchDecorator.swift in Sources */,
+				18CED6182AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift in Sources */,
 				18C54B6229D0348D0059EB17 /* FeedImagePresenter.swift in Sources */,
 				18BB80EF29BD8D8200A8E490 /* FeedImageViewModal.swift in Sources */,
 				18AE1EC629900E53009049C5 /* FeedViewController.swift in Sources */,
