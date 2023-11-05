@@ -73,6 +73,7 @@
 		18CED6182AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6172AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift */; };
 		18CED61A2AF7487D00D7FCAE /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6192AF7487D00D7FCAE /* FeedViewAdapter.swift */; };
 		18CED61C2AF74EF400D7FCAE /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */; };
+		18CED61E2AF74F6500D7FCAE /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		18CED6172AF7483600D7FCAE /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		18CED6192AF7487D00D7FCAE /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
+		18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +454,7 @@
 				18BB80D629BB2CA300A8E490 /* FeedImageCell.swift */,
 				18BB80D829BB60E800A8E490 /* UIView+Shimmering.swift */,
 				18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */,
+				18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */,
 				18CED6012AD7717300D7FCAE /* Feed.storyboard */,
 				18CED6032AD7726500D7FCAE /* Feed.xcassets */,
 			);
@@ -832,6 +835,7 @@
 				18CED61A2AF7487D00D7FCAE /* FeedViewAdapter.swift in Sources */,
 				18BB80F129C0DCE200A8E490 /* FeedPresenter.swift in Sources */,
 				18CED60E2AF7448300D7FCAE /* FeedLoadingViewModal.swift in Sources */,
+				18CED61E2AF74F6500D7FCAE /* UIImageView+Animations.swift in Sources */,
 				18CED6162AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				18CED61C2AF74EF400D7FCAE /* UITableView+Dequeueing.swift in Sources */,
 				18BB80E329BC975C00A8E490 /* FeedImageDataLoader.swift in Sources */,
