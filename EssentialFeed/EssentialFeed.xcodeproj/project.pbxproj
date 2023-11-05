@@ -69,6 +69,7 @@
 		18CED60E2AF7448300D7FCAE /* FeedLoadingViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED60D2AF7448300D7FCAE /* FeedLoadingViewModal.swift */; };
 		18CED6102AF745A900D7FCAE /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */; };
 		18CED6122AF746B900D7FCAE /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */; };
+		18CED6162AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		18CED60D2AF7448300D7FCAE /* FeedLoadingViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingViewModal.swift; sourceTree = "<group>"; };
 		18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
+		18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +488,7 @@
 				18BB80E929BCADAE00A8E490 /* FeedUIComposer.swift */,
 				18CED60F2AF745A900D7FCAE /* MainQueueDispatchDecorator.swift */,
 				18CED6112AF746B900D7FCAE /* WeakRefVirtualProxy.swift */,
+				18CED6152AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 			files = (
 				18BB80F129C0DCE200A8E490 /* FeedPresenter.swift in Sources */,
 				18CED60E2AF7448300D7FCAE /* FeedLoadingViewModal.swift in Sources */,
+				18CED6162AF747E100D7FCAE /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				18BB80E329BC975C00A8E490 /* FeedImageDataLoader.swift in Sources */,
 				18BB80D929BB60E800A8E490 /* UIView+Shimmering.swift in Sources */,
 				18CED6102AF745A900D7FCAE /* MainQueueDispatchDecorator.swift in Sources */,
