@@ -16,14 +16,9 @@ final class FeedViewControllerTests: XCTestCase {
         
         sut.loadViewIfNeeded()
         
-        let bundle = Bundle(for: FeedViewController.self)
-        let localizedKey = "FEED_VIEW_TITLE"
-        let localizedTitle = bundle.localizedString(forKey: localizedKey, value: nil, table: "Feed")
-        
-        XCTAssertNotEqual(localizedKey, localizedTitle, "Missing localized string for key \(localizedKey)")
-        XCTAssertEqual(sut.title, localizedTitle)
+        XCTAssertEqual(sut.title, localized("FEED_VIEW_TITLE"))
     }
-    
+        
     func test_loadFeedActions_requestFeedFromLoader() {
         let (sut, loader) = makeSUT()
         XCTAssertEqual(loader.loadFeedCallCount, 0, "Expected no load requests before view is loaded")
@@ -306,6 +301,18 @@ final class FeedViewControllerTests: XCTestCase {
             assertThat(sut, hasViewConfiguredFor: image, at: index, file: file, line: line)
         }
     }
+    
+    private func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
+        let table = "Feed"
+        let bundle = Bundle(for: FeedViewController.self)
+        let value = bundle.localizedString(forKey: key, value: nil, table: table)
+        
+        if (value == key) {
+            XCTFail("Missing localized string for key \(key) in table \(table)", file: file, line: line)
+        }
+        return value
+    }
+
     
     class LoaderSpy: FeedLoader, FeedImageDataLoader {
         
