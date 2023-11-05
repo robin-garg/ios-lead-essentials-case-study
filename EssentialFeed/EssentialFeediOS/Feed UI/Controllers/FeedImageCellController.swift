@@ -50,13 +50,6 @@ final class FeedImageCellController: FeedImageView {
     }
 }
 
-extension UITableView {
-    func dequeueReusableCell<T:UITableViewCell>() -> T {
-        let identifire = String(describing: T.self)
-        return dequeueReusableCell(withIdentifier: identifire) as! T
-    }
-}
-
 extension UIImageView {
     func setImageAnimated(_ newImage: UIImage?) {
         image = newImage
