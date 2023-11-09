@@ -19,7 +19,8 @@ import EssentialFeed
          presentationAdapter.presenter =
          FeedPresenter(
              feedView: FeedViewAdapter(controller: feedController, imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
-             loadingView: WeakRefVirtualProxy(feedController))
+             loadingView: WeakRefVirtualProxy(feedController),
+         feedErrorView: WeakRefVirtualProxy(feedController))
          
          return feedController
      }

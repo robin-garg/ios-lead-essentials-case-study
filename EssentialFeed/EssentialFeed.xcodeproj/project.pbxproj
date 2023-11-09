@@ -83,6 +83,7 @@
 		18CED6312AF7E9D800D7FCAE /* FeedUIIntegrationTests+LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6302AF7E9D800D7FCAE /* FeedUIIntegrationTests+LoaderSpy.swift */; };
 		18CED6332AF7EA7B00D7FCAE /* FeedUIIntegrationTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6322AF7EA7B00D7FCAE /* FeedUIIntegrationTests+Assertions.swift */; };
 		18CED6352AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6342AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift */; };
+		CDEA73FD2AFC58D2007C9324 /* FeedErrorViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA73FC2AFC58D2007C9324 /* FeedErrorViewModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		18CED6322AF7EA7B00D7FCAE /* FeedUIIntegrationTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Assertions.swift"; sourceTree = "<group>"; };
 		18CED6342AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Localization.swift"; sourceTree = "<group>"; };
 		CDEA73FB2AFB8E92007C9324 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
+		CDEA73FC2AFC58D2007C9324 /* FeedErrorViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				18BB80F029C0DCE200A8E490 /* FeedPresenter.swift */,
+				CDEA73FC2AFC58D2007C9324 /* FeedErrorViewModal.swift */,
 				18CED60B2AF7440A00D7FCAE /* FeedViewModal.swift */,
 				18CED60D2AF7448300D7FCAE /* FeedLoadingViewModal.swift */,
 				18C54B6129D0348D0059EB17 /* FeedImagePresenter.swift */,
@@ -853,6 +856,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEA73FD2AFC58D2007C9324 /* FeedErrorViewModal.swift in Sources */,
 				18CED61A2AF7487D00D7FCAE /* FeedViewAdapter.swift in Sources */,
 				18BB80F129C0DCE200A8E490 /* FeedPresenter.swift in Sources */,
 				18CED60E2AF7448300D7FCAE /* FeedLoadingViewModal.swift in Sources */,
