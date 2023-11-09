@@ -84,6 +84,7 @@
 		18CED6332AF7EA7B00D7FCAE /* FeedUIIntegrationTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6322AF7EA7B00D7FCAE /* FeedUIIntegrationTests+Assertions.swift */; };
 		18CED6352AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CED6342AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift */; };
 		CDEA73FD2AFC58D2007C9324 /* FeedErrorViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA73FC2AFC58D2007C9324 /* FeedErrorViewModal.swift */; };
+		CDEA73FF2AFC675B007C9324 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA73FE2AFC675B007C9324 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		18CED6342AF7EBD400D7FCAE /* FeedUIIntegrationTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Localization.swift"; sourceTree = "<group>"; };
 		CDEA73FB2AFB8E92007C9324 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		CDEA73FC2AFC58D2007C9324 /* FeedErrorViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModal.swift; sourceTree = "<group>"; };
+		CDEA73FE2AFC675B007C9324 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				18BB80D629BB2CA300A8E490 /* FeedImageCell.swift */,
+				CDEA73FE2AFC675B007C9324 /* ErrorView.swift */,
 				18BB80D829BB60E800A8E490 /* UIView+Shimmering.swift */,
 				18CED61B2AF74EF400D7FCAE /* UITableView+Dequeueing.swift */,
 				18CED61D2AF74F6500D7FCAE /* UIImageView+Animations.swift */,
@@ -871,6 +874,7 @@
 				18BB80EF29BD8D8200A8E490 /* FeedImageViewModal.swift in Sources */,
 				18AE1EC629900E53009049C5 /* FeedViewController.swift in Sources */,
 				18CED60C2AF7440A00D7FCAE /* FeedViewModal.swift in Sources */,
+				CDEA73FF2AFC675B007C9324 /* ErrorView.swift in Sources */,
 				18BB80D729BB2CA300A8E490 /* FeedImageCell.swift in Sources */,
 				18BB80E729BCA51800A8E490 /* FeedImageCellController.swift in Sources */,
 				18CED6122AF746B900D7FCAE /* WeakRefVirtualProxy.swift in Sources */,
