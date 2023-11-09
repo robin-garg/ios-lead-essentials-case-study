@@ -7,4 +7,12 @@
 
 struct FeedErrorViewModal {
     let message: String?
+    
+    static var noError: FeedErrorViewModal {
+        return FeedErrorViewModal(message: nil)
+    }
+    
+    static func error(message: String) -> FeedErrorViewModal {
+        return FeedErrorViewModal(message: message)
+    }
 }
