@@ -42,7 +42,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
         view.display(FeedImageViewModel(
             description: model.description,
             location: model.location,
-            image: image,
+            image: image,   
             isLoading: false,
             shouldRetry: false))
     }
