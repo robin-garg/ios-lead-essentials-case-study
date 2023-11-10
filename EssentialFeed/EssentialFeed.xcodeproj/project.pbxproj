@@ -90,6 +90,7 @@
 		CDEA740F2AFE4E51007C9324 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA740E2AFE4E51007C9324 /* FeedPresenter.swift */; };
 		CDEA74102AFE4E9C007C9324 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDEA740A2AFE4BA8007C9324 /* Feed.strings */; };
 		CDEA74122AFE5032007C9324 /* FeedViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA74112AFE5032007C9324 /* FeedViewModal.swift */; };
+		CDEA74142AFE5066007C9324 /* FeedLoadingViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 		CDEA740C2AFE4BB3007C9324 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
 		CDEA740E2AFE4E51007C9324 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		CDEA74112AFE5032007C9324 /* FeedViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModal.swift; sourceTree = "<group>"; };
+		CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingViewModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				CDEA740E2AFE4E51007C9324 /* FeedPresenter.swift */,
+				CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */,
 				CDEA74112AFE5032007C9324 /* FeedViewModal.swift */,
 				CDEA740A2AFE4BA8007C9324 /* Feed.strings */,
 			);
@@ -859,6 +862,7 @@
 				1836D6CD280EA72800B73102 /* FeedImage.swift in Sources */,
 				CDEA740F2AFE4E51007C9324 /* FeedPresenter.swift in Sources */,
 				186FE54229608E4200F362B1 /* LocalFeedLoader.swift in Sources */,
+				CDEA74142AFE5066007C9324 /* FeedLoadingViewModal.swift in Sources */,
 				18AD76862985A035001D19C3 /* ManagedCache.swift in Sources */,
 				18CE085D28351229002E44C0 /* URLSessionHTTPClient.swift in Sources */,
 				CDEA74122AFE5032007C9324 /* FeedViewModal.swift in Sources */,
