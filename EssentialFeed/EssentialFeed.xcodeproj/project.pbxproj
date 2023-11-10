@@ -91,6 +91,7 @@
 		CDEA74102AFE4E9C007C9324 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDEA740A2AFE4BA8007C9324 /* Feed.strings */; };
 		CDEA74122AFE5032007C9324 /* FeedViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA74112AFE5032007C9324 /* FeedViewModal.swift */; };
 		CDEA74142AFE5066007C9324 /* FeedLoadingViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */; };
+		CDEA74162AFE509E007C9324 /* FeedErrorViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA74152AFE509E007C9324 /* FeedErrorViewModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +229,7 @@
 		CDEA740E2AFE4E51007C9324 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		CDEA74112AFE5032007C9324 /* FeedViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModal.swift; sourceTree = "<group>"; };
 		CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingViewModal.swift; sourceTree = "<group>"; };
+		CDEA74152AFE509E007C9324 /* FeedErrorViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				CDEA740E2AFE4E51007C9324 /* FeedPresenter.swift */,
+				CDEA74152AFE509E007C9324 /* FeedErrorViewModal.swift */,
 				CDEA74132AFE5066007C9324 /* FeedLoadingViewModal.swift */,
 				CDEA74112AFE5032007C9324 /* FeedViewModal.swift */,
 				CDEA740A2AFE4BA8007C9324 /* Feed.strings */,
@@ -849,6 +852,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18AD768429859F23001D19C3 /* CoreDataHelpers.swift in Sources */,
+				CDEA74162AFE509E007C9324 /* FeedErrorViewModal.swift in Sources */,
 				18AD76712985511D001D19C3 /* FeedStore.xcdatamodeld in Sources */,
 				1836D6CF280EA93600B73102 /* FeedLoader.swift in Sources */,
 				1836D6DE2815B1BE00B73102 /* FeedItemMapper.swift in Sources */,
