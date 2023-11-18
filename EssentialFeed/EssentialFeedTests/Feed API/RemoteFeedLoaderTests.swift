@@ -13,7 +13,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
         
-        XCTAssertTrue(client.requestedUrls.isEmpty)
+        XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
     func test_load_requestsDataFromURL() {
@@ -22,7 +22,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         sut.load { _ in }
         
-        XCTAssertEqual(client.requestedUrls, [url])
+        XCTAssertEqual(client.requestedURLs, [url])
     }
 
     func test_loadTwice_requestsDataFromURLTwice() {
@@ -32,7 +32,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         sut.load { _ in }
         sut.load { _ in }
         
-        XCTAssertEqual(client.requestedUrls, [url, url])
+        XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
     // response tests
@@ -164,35 +164,5 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
         return .failure(error)
-    }
-    
-    private class HTTPClientSpy: HTTPClient {
-        private struct Task: HTTPClientTask {
-            func cancel() {}
-        }
-        private var messages = [(url:URL, completion: (HTTPClient.Result) -> Void)]()
-        
-        var requestedUrls: [URL] {
-            return messages.map { $0.url }
-        }
-        
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-            messages.append((url, completion))
-            return Task()
-        }
-        
-        func complete(with error:Error, at index: Int = 0) {
-            messages[index].completion(.failure(error))
-        }
-        
-        func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
-            let response = HTTPURLResponse(
-                url: requestedUrls[index],
-                statusCode: code,
-                httpVersion: nil,
-                headerFields: nil
-            )!
-            messages[index].completion(.success((data, response)))
-        }
     }
 }
