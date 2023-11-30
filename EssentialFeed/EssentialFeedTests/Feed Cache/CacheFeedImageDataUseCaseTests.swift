@@ -37,7 +37,7 @@ final class CacheFeedImageDataUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
         
         expect(sut, toCompleteWith: .success(()), when: {
-            store.completeInsertion()
+            store.completeInsertionSuccessfully()
         })
     }
     
@@ -49,7 +49,7 @@ final class CacheFeedImageDataUseCaseTests: XCTestCase {
         sut?.save(anyData(), for: anyURL()) { received.append($0) }
         
         sut = nil
-        store.completeInsertion()
+        store.completeInsertionSuccessfully()
         store.completeInsertion(with: anyNSError())
         
         XCTAssertTrue(received.isEmpty, "Expected received to be empty if instance has been deallocated")
