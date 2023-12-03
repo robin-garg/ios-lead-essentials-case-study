@@ -25,6 +25,16 @@ final class CoreDataFeedImageDataStoreTests: XCTestCase {
         expect(sut, toCompleteRetrievalWith: notFound(), for: nonMatchingURL)
     }
     
+    func test_retrieveImageDate_deliversFoundDataWhenThereIsAStoredDataMatchingURL() {
+        let sut = makeSUT()
+        let storedData = anyData()
+        let matchingURL = URL(string: "https://a-url.com")!
+        
+        insert(storedData, for: matchingURL, into: sut)
+        
+        expect(sut, toCompleteRetrievalWith: found(storedData), for: matchingURL)
+    }
+    
     // MARK: - Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CoreDataFeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
@@ -36,6 +46,10 @@ final class CoreDataFeedImageDataStoreTests: XCTestCase {
     
     private func notFound() -> FeedImageDataStore.RetrievalResult {
         return .success(.none)
+    }
+    
+    private func found(_ data: Data) -> FeedImageDataStore.RetrievalResult {
+        return .success(data)
     }
     
     private func localImage(url: URL) -> LocalFeedImage {
