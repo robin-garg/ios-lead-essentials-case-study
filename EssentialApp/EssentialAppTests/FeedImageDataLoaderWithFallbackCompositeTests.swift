@@ -151,36 +151,5 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         func complete(with imageData: Data, at index: Int = 0) {
             messages[index].completion(.success(imageData))
         }
-    }
-      
-    private func anyURL() -> URL {
-        return URL(string: "https://any-url.com")!
-    }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 1)
-    }
-    
-    func anyData() -> Data {
-        return Data("any data".utf8)
-    }
-    
-    private func anyImageData() -> Data {
-        return UIImage.make(withColor: UIColor.red).pngData()!
-    }
+    }      
 }
-
-private extension UIImage {
-    static func make(withColor color: UIColor) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        
-        let format = UIGraphicsImageRendererFormat()
-        format.scale = 1
-
-        return UIGraphicsImageRenderer(size: rect.size, format: format).image { rendererContext in
-            color.setFill()
-            rendererContext.fill(rect)
-        }
-    }
-}
-
