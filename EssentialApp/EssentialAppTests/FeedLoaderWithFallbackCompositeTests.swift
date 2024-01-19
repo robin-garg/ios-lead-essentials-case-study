@@ -59,15 +59,7 @@ final class FeedLoaderWithFallbackCompositeTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1.0)
     }
-    
-    private func trackForMemoryLeak(_ instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
-        // Teardown block will be called after each an every test executed.
-        // So instance should be nil here.
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak", file: file, line: line)
-        }
-    }
-    
+        
     private func anyNSError() -> NSError {
         return NSError(domain: "any error", code: 1)
     }

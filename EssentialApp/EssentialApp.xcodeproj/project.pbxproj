@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD3C33B62B4AE54700521413 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C33B52B4AE54700521413 /* FeedLoaderWithFallbackCompositeTests.swift */; };
 		CD5ADEEE2B5A7D2300179058 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5ADEED2B5A7D2300179058 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
+		CD5ADEF12B5A7EE600179058 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5ADEF02B5A7EE600179058 /* XCTestCase+MemoryLeakTracking.swift */; };
 		CD9AD6012B569D0D0049C6B0 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AD6002B569D0D0049C6B0 /* FeedLoaderWithFallbackComposite.swift */; };
 		CD9AD6032B569ED00049C6B0 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AD6022B569ED00049C6B0 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */; };
 		CDB8A4E12B4139C000066840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB8A4E02B4139C000066840 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		CD3C33B52B4AE54700521413 /* FeedLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		CD5ADEED2B5A7D2300179058 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
+		CD5ADEF02B5A7EE600179058 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		CD9AD6002B569D0D0049C6B0 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		CD9AD6022B569ED00049C6B0 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		CDB8A4DD2B4139C000066840 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD5ADEEF2B5A7E9E00179058 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD5ADEF02B5A7EE600179058 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CDB8A4D42B4139C000066840 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		CDB8A4F62B4139C300066840 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD5ADEEF2B5A7E9E00179058 /* Helpers */,
 				CDB8A4F72B4139C300066840 /* EssentialAppTests.swift */,
 				CD3C33B52B4AE54700521413 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				CD9AD6022B569ED00049C6B0 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3C33B62B4AE54700521413 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
+				CD5ADEF12B5A7EE600179058 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				CDB8A4F82B4139C300066840 /* EssentialAppTests.swift in Sources */,
 				CD9AD6032B569ED00049C6B0 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 			);
