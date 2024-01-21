@@ -30,6 +30,7 @@
 		CDB8A4E82B4139C000066840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB8A4E62B4139C000066840 /* Main.storyboard */; };
 		CDB8A4EA2B4139C300066840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB8A4E92B4139C300066840 /* Assets.xcassets */; };
 		CDB8A4ED2B4139C300066840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB8A4EB2B4139C300066840 /* LaunchScreen.storyboard */; };
+		CDC22F642B5D49CA00996B94 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC22F632B5D49CA00996B94 /* FeedImageDataLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CDB8A4EC2B4139C300066840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDB8A4EE2B4139C300066840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDB8A4F32B4139C300066840 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC22F632B5D49CA00996B94 /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				CD9AD6002B569D0D0049C6B0 /* FeedLoaderWithFallbackComposite.swift */,
 				CD5ADEED2B5A7D2300179058 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				CDAD6F122B5BFB8700BE0C5B /* FeedLoaderCacheDecorator.swift */,
+				CDC22F632B5D49CA00996B94 /* FeedImageDataLoaderCacheDecorator.swift */,
 				CDB8A4E42B4139C000066840 /* ViewController.swift */,
 				CDB8A4E62B4139C000066840 /* Main.storyboard */,
 				CDB8A4E92B4139C300066840 /* Assets.xcassets */,
@@ -282,6 +285,7 @@
 				CDAD6F132B5BFB8700BE0C5B /* FeedLoaderCacheDecorator.swift in Sources */,
 				CDB8A4E32B4139C000066840 /* SceneDelegate.swift in Sources */,
 				CD5ADEEE2B5A7D2300179058 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
+				CDC22F642B5D49CA00996B94 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
