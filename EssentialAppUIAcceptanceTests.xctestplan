@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "41A6F088-5929-4B6A-950A-13564C377349",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "EssentialAppUIAcceptanceTests\/test_onLaunch_displayRemoteFeedWhenCustomerHasConnectivity()"
+      ],
+      "target" : {
+        "containerPath" : "container:EssentialApp.xcodeproj",
+        "identifier" : "CDC458CE2B63D5F100023D31",
+        "name" : "EssentialAppUIAcceptanceTests"
+      }
+    }
+  ],
+  "version" : 1
+}

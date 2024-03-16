@@ -18,6 +18,30 @@
   },
   "testTargets" : [
     {
+      "selectedTests" : [
+        "FeedImageDataLoaderCacheDecoratorTests\/test_cancelsLoadImageData_cancelsLoaderTask()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_init_doesNotLoadImageData()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_loadImageData_cachesLoadedDataOnLoaderSuccess()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_loadImageData_deliversDataOnLoaderSuccess()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_loadImageData_deliversErrorOnLoaderError()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_loadImageData_doesNotCacheLoadedDataOnLoaderFailure()",
+        "FeedImageDataLoaderCacheDecoratorTests\/test_loadImageData_loadsFromLoader()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_cancelLoadImageData_cancelsFallbackLoaderTask()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_cancelLoadImageData_cancelsPrimaryLoaderTask()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_init_doesNotLoadImageData()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_loadImageData_deliversErrorOnBothPrimaryAndFallbackLoaderFailure()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_loadImageData_deliversFallbackDataOnFallbackLoader()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_loadImageData_deliversPrimaryDataOnPrimaryLoaderSuccess()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_loadImageData_loadsFromFallbackLoaderOnPrimaryLoaderFailure()",
+        "FeedImageDataLoaderWithFallbackCompositeTests\/test_loadImageData_loadsFromPrimaryLoaderFirst()",
+        "FeedLoaderCacheDecoratorTests\/test_load_cachesLoadedFeedOnLoaderSuccess()",
+        "FeedLoaderCacheDecoratorTests\/test_load_deliversErrorOnLoaderFailure()",
+        "FeedLoaderCacheDecoratorTests\/test_load_deliversFeedOnLoaderSuccess()",
+        "FeedLoaderCacheDecoratorTests\/test_load_doesNotCacheOnLoaderFailure()",
+        "FeedLoaderWithFallbackCompositeTests\/test_load_deliversFailureOnBothPrimaryAndFallbackLoaderFailure()",
+        "FeedLoaderWithFallbackCompositeTests\/test_load_deliversFallbackFeedOnPrimaryLoaderFailure()",
+        "FeedLoaderWithFallbackCompositeTests\/test_load_deliversPrimaryFeedOnPrimaryLoaderSuccess()"
+      ],
       "target" : {
         "containerPath" : "container:EssentialApp.xcodeproj",
         "identifier" : "CDB8A4F22B4139C300066840",
